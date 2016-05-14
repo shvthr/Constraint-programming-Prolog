@@ -1,0 +1,8 @@
+Name: X(i), i=1..4, domain: 2..6
+Name: Y(i), i=1..6, domain: 1..5
+Name: Z(i), i=1..2, domain: 0..1
+Constraint: X(i) mod 2 = 0, range: (i >= 1 /\ i =< 4 )
+Constraint: Y(i) mod 2 = 1, range: (i >= 1 /\ i =< 6)
+Constraint: X(i) + Y(i) = Y(j) + 10 * Z(i), range: i = 1 /\ j = 2
+Constraint: Z(i) + X(j) + Y(k) = X(k) + 10*Z(j), range: i = 1 /\ j = 2 /\ k = 3
+Constraint: Z(i) + Y(j) + X(j)  =Y(k) + 10*Y(l), range: i = 2 /\ j = 4 /\ k = 5 /\ l = 6

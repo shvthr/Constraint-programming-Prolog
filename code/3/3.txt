@@ -1,0 +1,17 @@
+Name: S1C, domain: 0..3
+Name: S1R, domain: 0..1
+Name: S2C, domain: 0..5
+Name: S2R, domain: 0..2
+Name: S3C, domain: 0..4
+Name: S3R, domain: 0..3
+Name: S4C, domain: 0..2
+Name: S4R, domain: 0..3
+Name: Col(i), i=0..27, domain: 0..6
+Name: Row(i), i=0..27, domain: 0..3
+Name: Z(i), i=0..27, domain: 0..4
+Constraint: Col(i) = i mod 7, range: 0 =< i /\ i =< 27
+Constraint: Row(i) = (i / 7), range: 0 =< i /\ i =< 27
+Constraint: Z(i) = 1 <=> (Col(i) - 3 =< S1C /\ S1C =<  Col(i) /\ Row(i) -2 =< S1R /\ S1R=< Row(i)), range: 0 =< i /\ i =< 27
+Constraint: Z(i) = 2 <=> (Col(i) - 1 =< S2C /\ S2C =<  Col(i) /\ Row(i) -1 =< S2R /\ S2R=< Row(i)), range: 0 =< i /\ i =< 27
+Constraint: Z(i) = 3 <=> (Col(i) - 2 =< S3C /\ S3C =<  Col(i) /\ S3R= Row(i)), range: 0 =< i /\ i =< 27
+Constraint: Z(i) = 4 <=> (Col(i) - 4 =< S4C /\ S4C =<  Col(i) /\ Row(i) = S4R), range: 0 =< i /\ i =< 27
